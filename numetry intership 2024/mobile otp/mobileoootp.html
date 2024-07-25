@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile OTP Verification</title>
+</head>
+<body>
+    <h1>Mobile OTP Verification</h1>
+
+    <div>
+        <h2>Enter Mobile Number</h2>
+        <input type="text" id="mobileNumber" placeholder="Enter mobile number">
+        <button onclick="sendOTP()">Send OTP</button>
+    </div>
+
+    <div id="otpSection" style="display: none;">
+        <h2>Enter OTP</h2>
+        <input type="text" id="otpInput" placeholder="Enter OTP">
+        <button onclick="verifyOTP()">Verify OTP</button>
+        <p id="otpOutput"></p>
+    </div>
+
+    <script>
+        function generateOTP() {
+            return Math.floor(100000 + Math.random() * 900000).toString();
+        }
+
+        function sendOTP() {
+            const mobileNumber = document.getElementById('mobileNumber').value;
+            if (mobileNumber.length !== 10) {
+                alert('Please enter a valid 10-digit mobile number.');
+                return;
+            }
+
+            const otp = generateOTP();
+            sessionStorage.setItem('otp', otp);
+            alert(`OTP sent to ${mobileNumber}: ${otp}`); // Simulating sending OTP
+
+            document.getElementById('otpSection').style.display = 'block';
+        }
+
+         function verifyOTP() {
+            const enteredOTP = document.getElementById('otpInput').value;
+            const storedOTP = sessionStorage.getItem('otp');
+
+            if (enteredOTP === storedOTP) {
+                document.getElementById('otpOutput').innerText = 'OTP verified successfully!';
+                sessionStorage.removeItem('otp');
+            } else {
+                document.getElementById('otpOutput').innerText = 'Invalid OTP. Please try again.';
+            }
+        }
+    </script>
+</body>
+</html>

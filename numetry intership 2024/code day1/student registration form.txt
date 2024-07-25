@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Student Registration Form</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <!-- Add icon library -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            *{
+    padding:0px;
+    margin:0px;  
+    box-sizing: border-box;
+}
+body{
+    background-color: orange;
+    
+}
+
+.container{
+    width:380px;
+    height:450px;
+    background-color: white;
+    text-align: center;
+    margin-left:35%;
+    margin-top:7%;
+
+}
+.container h1{
+    padding: 6px;
+}
+.inputt{
+    height:25px;
+    width:300px;
+    border:1px solid orange;
+    margin-top: 22px;
+    padding-left: 5px;
+}
+
+.fname,.lname{
+    height:25px;
+    width:134px;
+    border:1px solid orange; 
+    margin-top: 22px;
+    padding-left: 5px;
+}
+.input i{
+    padding: 6px;
+    border:0px solid orange;
+    font-size: 20px;
+    
+} 
+.gender{
+    margin-top: 20px;
+    font-size: 18px;
+    margin-right:140px;
+    
+}
+.submit{
+    height:30px;
+    width:333px;
+    cursor:pointer;
+    margin: 30px;
+    border:0px solid gray;
+    background-color:orange;
+    color:white;
+
+}
+.submit:active{
+    background-color:green;
+    color:black;
+
+}
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1 align="center"> Student Registration Form</h1>
+            
+            <div class="input">
+                <i class="fa fa-user"></i>
+                <input type="text" placeholder="First Name" class="fname" name="firstname">
+                <i class="fa fa-user"></i>
+                <input type="text" placeholder="Last Name" class="lname" name="lastname">
+            </div>
+            <div class="input">
+                <i class="fa fa-envelope"></i>
+                <input type="email" placeholder="Email" class="inputt" name="email">
+            </div>
+            <div class="input">
+                <i class="fa fa-lock"></i>
+                <input type="password" placeholder="Password" class="inputt" name="password">
+            </div>
+            <div class="input">
+                <i class="fa fa-calendar"></i>
+                <input type="text" placeholder="DOB (DD/MM/YEAR)" class="inputt" name="dob">
+            </div>
+            <div class="gender" name="gender">
+                <input type="radio" name="gender" value="Male">Male
+                <input type="radio" name="gender" value="Female">Female
+            </div>
+            <div class="input">
+                <i class="fa fa-home"></i>
+                <input type="text" placeholder="City" class="inputt" name="city">
+            </div>
+            <input type="submit" value="Submit" name="save" class="submit">
+            </form>
+        </div>
+
+    </body>
+</html>
